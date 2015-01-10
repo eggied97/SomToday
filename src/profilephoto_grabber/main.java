@@ -42,7 +42,7 @@ public class main {
 		JSESSIONID = SomToday_login.getLoggedInCookie(username, password);
 		
 		if(JSESSIONID == null){
-			//terminate, no JSESSIONID (could be wron password)
+			//terminate, no JSESSIONID (could be wrong password, or something else is wrong)
 			
 			System.exit(0);
 		}
@@ -81,7 +81,7 @@ public class main {
 				//check if the pixel is the same color with the standart image, only should give false positif if the profile photo has the exact same
 				//shade of gray as the standart photo :p
 				if(dwnldImg.getRGB(54, 83) != img.getRGB(54, 83)){
-					File outputfile = new File("D:/SomToday/images/"+id+".jpg");				
+					File outputfile = new File("images/"+id+".jpg");				
 					ImageIO.write(dwnldImg, "jpg", outputfile);
 				
 					//increase download counter
